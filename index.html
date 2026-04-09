@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharma Classes Banner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Nunito:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+background: linear-gradient(135deg, #ede0f8 0%, #daeef8 50%, #f8ede0 100%);
+padding: 40px 20px;
+font-family: ‘Nunito’, sans-serif;
+}
+
+.banner {
+width: 860px;
+background: #fdf8ff;
+border-radius: 24px;
+overflow: hidden;
+box-shadow:
+0 0 0 3px #e0cff5,
+0 0 0 7px #f5e0cf,
+0 40px 100px rgba(120, 80, 180, 0.2);
+animation: lift 7s ease-in-out infinite;
+}
+@keyframes lift {
+0%,100% { transform: translateY(0); }
+50% { transform: translateY(-8px); }
+}
+
+/* Rainbow top bar */
+.rainbow-bar {
+height: 7px;
+background: linear-gradient(90deg, #f5b8c8,#f5d8b8,#f5f0b8,#b8f0d8,#b8d8f5,#d8b8f5,#f5b8d8);
+}
+
+/* ── HEADER ── */
+.header {
+background: linear-gradient(150deg, #f0e6ff 0%, #e6f3ff 55%, #fff0f5 100%);
+padding: 30px 44px 22px;
+position: relative;
+overflow: hidden;
+}
+.header::before {
+content: ‘’;
+position: absolute;
+width: 340px; height: 340px; border-radius: 50%;
+background: radial-gradient(circle, rgba(210,180,255,.25) 0%, transparent 70%);
+top: -100px; right: -80px; pointer-events: none;
+}
+.header::after {
+content: ‘’;
+position: absolute;
+width: 180px; height: 180px; border-radius: 50%;
+background: radial-gradient(circle, rgba(180,230,210,.3) 0%, transparent 70%);
+bottom: -40px; left: -30px; pointer-events: none;
+}
+
+/* sparkles */
+.sp { position: absolute; font-size: 15px; opacity: .5; animation: twinkle 3s ease-in-out infinite; }
+.sp:nth-child(1){top:16px;left:48%;animation-delay:0s;}
+.sp:nth-child(2){top:34px;right:70px;font-size:11px;animation-delay:.7s;}
+.sp:nth-child(3){bottom:24px;right:160px;font-size:13px;animation-delay:1.4s;}
+.sp:nth-child(4){top:70px;left:26px;font-size:11px;animation-delay:2.1s;}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(1) rotate(0deg);}50%{opacity:.85;transform:scale(1.4) rotate(18deg);}}
+
+.brand-row {
+display: flex; align-items: center; gap: 18px;
+position: relative; z-index: 1; margin-bottom: 10px;
+}
+.logo-box {
+width: 58px; height: 58px; border-radius: 16px; flex-shrink: 0;
+background: linear-gradient(135deg, #cbb8f0, #a8d4f0);
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Playfair Display’, serif; font-size: 28px; font-weight: 900;
+color: #3a2d5a;
+box-shadow: 0 6px 20px rgba(150,120,210,.35);
+}
+.brand-text h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: 52px; font-weight: 900; line-height: 1;
+background: linear-gradient(135deg, #8040cc, #c060a0, #e0803a);
+-webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+letter-spacing: -1px;
+}
+.brand-text h1 span {
+background: linear-gradient(135deg, #3870cc, #50a8cc, #38c8a8);
+-webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+.tagline {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic; font-size: 18px; font-weight: 600;
+color: #7a5a9a; opacity: .85;
+position: relative; z-index: 1; margin-bottom: 18px;
+letter-spacing: .3px;
+}
+.tagline::before { content: ’✦ ‘; }
+.tagline::after  { content: ’ ✦’; }
+
+.coaching-label {
+position: relative; z-index: 1;
+font-size: 15px; font-weight: 800; letter-spacing: 2px;
+text-transform: uppercase; color: #5a4278;
+background: linear-gradient(90deg, rgba(220,200,255,.6), rgba(200,230,255,.6));
+display: inline-block; padding: 6px 18px; border-radius: 30px;
+margin-bottom: 18px;
+}
+
+/* Class chips IX X XI XII */
+.class-row {
+display: flex; gap: 10px; flex-wrap: wrap;
+position: relative; z-index: 1; margin-bottom: 6px;
+}
+.class-chip {
+padding: 10px 22px; border-radius: 14px;
+font-family: ‘Playfair Display’, serif;
+font-size: 26px; font-weight: 900;
+box-shadow: 0 4px 14px rgba(0,0,0,.08);
+letter-spacing: 1px;
+}
+.cc-ix  { background: linear-gradient(135deg,#f0d8ff,#e0c8f8); color: #5a2d8a; }
+.cc-x   { background: linear-gradient(135deg,#d8f0e8,#c8e8d8); color: #1a6a46; }
+.cc-xi  { background: linear-gradient(135deg,#ffd8e8,#f0c8d8); color: #8a1a46; }
+.cc-xii { background: linear-gradient(135deg,#d8eeff,#c8e0f8); color: #1a468a; }
+
+/* ── COURSES ── */
+.courses-section {
+background: linear-gradient(135deg,#fce8ff,#e8f6ff,#f8ffea);
+padding: 20px 44px;
+}
+
+.section-label {
+font-size: 10px; font-weight: 800; letter-spacing: 3.5px;
+text-transform: uppercase; color: #8a6aaa; margin-bottom: 12px;
+display: flex; align-items: center; gap: 8px;
+}
+.section-label::before, .section-label::after {
+content: ‘’; flex: 1; height: 1.5px;
+background: linear-gradient(90deg, transparent, #cbb8f0, transparent);
+}
+
+.course-pills {
+display: flex; flex-wrap: wrap; gap: 8px;
+}
+.pill {
+padding: 6px 14px; border-radius: 50px;
+font-size: 12px; font-weight: 700; letter-spacing: .4px;
+}
+.p1{background:#f0d8ff;color:#6030a0;}
+.p2{background:#d8f0e8;color:#1a5e40;}
+.p3{background:#ffe8d8;color:#8a4010;}
+.p4{background:#d8e8ff;color:#1a3a80;}
+.p5{background:#ffd8f0;color:#8a1060;}
+.p6{background:#d8fff0;color:#106040;}
+.p7{background:#fff8d8;color:#6a5010;}
+.p8{background:#f8d8ff;color:#701090;}
+.p9{background:#d8f8ff;color:#107090;}
+
+.entrance-row {
+margin-top: 12px;
+display: flex; flex-wrap: wrap; gap: 8px;
+align-items: center;
+}
+.entrance-label {
+font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+text-transform: uppercase; color: #7a5a9a; margin-right: 4px;
+}
+.entrance-chip {
+padding: 5px 14px; border-radius: 50px;
+font-size: 12px; font-weight: 700;
+}
+.ec1{background:#ffe0d8;color:#8a3010;}
+.ec2{background:#d8e0ff;color:#3010a0;}
+.ec3{background:#d8ffe0;color:#106a20;}
+.ec4{background:#ffd8f8;color:#8a1070;}
+
+/* open school */
+.open-school-bar {
+background: linear-gradient(90deg, #f5e8ff, #e8f8ff, #f8ffe8, #ffe8f8);
+padding: 14px 44px;
+display: flex; align-items: center; gap: 12px;
+}
+.open-icon {
+font-size: 20px;
+background: linear-gradient(135deg,#e8d0ff,#d0e8ff);
+width: 38px; height: 38px; border-radius: 10px;
+display: flex; align-items: center; justify-content: center;
+box-shadow: 0 3px 10px rgba(150,100,210,.2);
+}
+.open-text {
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic; font-size: 18px; font-weight: 600; color: #5a3a7a;
+}
+.open-text strong { font-style: normal; font-weight: 700; }
+
+/* ── ADDRESS ── */
+.address-section {
+padding: 18px 44px;
+background: #fdf8ff;
+display: flex; flex-direction: column; gap: 10px;
+}
+.addr-card {
+display: flex; align-items: flex-start; gap: 14px;
+background: white; border-radius: 14px; padding: 13px 18px;
+box-shadow: 0 3px 14px rgba(120,80,180,.07);
+border-left: 4px solid transparent;
+}
+.addr-card:nth-child(1){border-color:#cbb8f0;}
+.addr-card:nth-child(2){border-color:#b8d8f0;}
+.addr-icon {
+width: 34px; height: 34px; border-radius: 10px;
+display: flex; align-items: center; justify-content: center;
+font-size: 16px; flex-shrink: 0;
+}
+.ai1{background:linear-gradient(135deg,#f0d8ff,#e0c8f8);}
+.ai2{background:linear-gradient(135deg,#d8eeff,#c8e0f8);}
+.addr-label {
+font-size: 10px; font-weight: 800; letter-spacing: 2px;
+text-transform: uppercase; color: #9a78ba; margin-bottom: 3px;
+}
+.addr-value { font-size: 13px; font-weight: 700; color: #3a2d5a; line-height: 1.4; }
+
+/* ── CONTACT ── */
+.contact-section {
+padding: 18px 44px 30px;
+background: #fdf8ff;
+display: flex; gap: 14px; flex-wrap: wrap;
+}
+.contact-card {
+flex: 1; min-width: 210px;
+background: white; border-radius: 16px; padding: 16px 18px;
+display: flex; align-items: center; gap: 13px;
+box-shadow: 0 4px 18px rgba(120,80,180,.08);
+border-top: 3px solid transparent;
+transition: transform .2s;
+cursor: pointer;
+}
+.contact-card:hover { transform: translateY(-4px); }
+.contact-card:nth-child(1){border-color:#cbb8f0;}
+.contact-card:nth-child(2){border-color:#b8e8d8;}
+.contact-card:nth-child(3){border-color:#b8d8f0;}
+
+.c-avatar {
+width: 42px; height: 42px; border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Playfair Display’, serif; font-size: 18px; font-weight: 900;
+flex-shrink: 0;
+}
+.ca1{background:linear-gradient(135deg,#e8d0ff,#d0c0f0);color:#5a3d8a;}
+.ca2{background:linear-gradient(135deg,#d0f0e8,#c0e8d0);color:#2d6b50;}
+.ca3{background:linear-gradient(135deg,#d0e8ff,#c0d8f0);color:#2d508a;}
+
+.c-info { flex: 1; }
+.c-name { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #9a78ba; margin-bottom: 2px; }
+.c-number { font-size: 20px; font-weight: 900; color: #3a2d5a; letter-spacing: .8px; }
+.c-badge {
+font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 20px;
+background: #e8f5d8; color: #3a6a20; letter-spacing: .8px;
+margin-top: 4px; display: inline-block;
+}
+
+.rainbow-bar-bottom {
+height: 7px;
+background: linear-gradient(90deg,#d8b8f5,#b8d8f5,#b8f0d8,#f5f0b8,#f5d8b8,#f5b8c8,#f5b8d8);
+}
+</style>
+
+</head>
+<body>
+<div class="banner">
+  <div class="rainbow-bar"></div>
+
+  <!-- HEADER -->
+
+  <div class="header">
+    <span class="sp">✦</span>
+    <span class="sp">✧</span>
+    <span class="sp">⋆</span>
+    <span class="sp">✦</span>
+
+```
+<div class="brand-row">
+  <div class="logo-box">S</div>
+  <div class="brand-text">
+    <h1>Sharma <span>Classes</span></h1>
+  </div>
+</div>
+
+<div class="tagline">Scripting Success Stories Year After Year</div>
+
+<div class="coaching-label">🎓 Excellent Coaching For</div>
+
+<div class="class-row">
+  <div class="class-chip cc-ix">Class IX</div>
+  <div class="class-chip cc-x">Class X</div>
+  <div class="class-chip cc-xi">Class XI</div>
+  <div class="class-chip cc-xii">Class XII</div>
+</div>
+```
+
+  </div>
+
+  <!-- COURSES -->
+
+  <div class="courses-section">
+    <div class="section-label">Subjects Offered</div>
+    <div class="course-pills">
+      <span class="pill p1">Mathematics</span>
+      <span class="pill p2">Science</span>
+      <span class="pill p3">English</span>
+      <span class="pill p4">Physics</span>
+      <span class="pill p5">Chemistry</span>
+      <span class="pill p6">Biology</span>
+      <span class="pill p7">Accountancy</span>
+      <span class="pill p8">Economics</span>
+      <span class="pill p8">Business Studies</span>
+      <span class="pill p9">Computer Science</span>
+      <span class="pill p3">Social Studies</span>
+      <span class="pill p1">I.T. & more</span>
+    </div>
+    <div class="entrance-row">
+      <span class="entrance-label">Also for ›</span>
+      <span class="entrance-chip ec1">B.A.</span>
+      <span class="entrance-chip ec2">B.Com</span>
+      <span class="entrance-chip ec3">Med / Engg Entrance</span>
+      <span class="entrance-chip ec4">Law Entrance Exam</span>
+    </div>
+  </div>
+
+  <!-- OPEN SCHOOL -->
+
+  <div class="open-school-bar">
+    <div class="open-icon">📖</div>
+    <div class="open-text">
+      <strong>Admissions Open</strong> — Open School · JBT · B.Ed. · and more
+    </div>
+  </div>
+
+  <!-- ADDRESS -->
+
+  <div class="address-section">
+    <div class="section-label" style="padding:0 0 2px;">Our Locations</div>
+    <div class="addr-card">
+      <div class="addr-icon ai1">🏢</div>
+      <div>
+        <div class="addr-label">Head Office</div>
+        <div class="addr-value">E-82, Near P.N.B., Opp. Metro Pillar No. 174,<br>Shastri Nagar, Delhi – 110052</div>
+      </div>
+    </div>
+    <div class="addr-card">
+      <div class="addr-icon ai2">📌</div>
+      <div>
+        <div class="addr-label">Branch Office</div>
+        <div class="addr-value">19, Rama Park, Near Jaipur Golden Transport,<br>Above Akash Dairy, Kishan Ganj, Delhi – 110007</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+
+  <div class="contact-section">
+    <div class="contact-card">
+      <div class="c-avatar ca1">S</div>
+      <div class="c-info">
+        <div class="c-name">Sharma Sir</div>
+        <div class="c-number">9968 294 774</div>
+      </div>
+      <span style="font-size:18px;">📞</span>
+    </div>
+    <div class="contact-card">
+      <div class="c-avatar ca2">J</div>
+      <div class="c-info">
+        <div class="c-name">Jitender Tiwari Sir</div>
+        <div class="c-number">7982 435 981</div>
+      </div>
+      <span style="font-size:18px;">📞</span>
+    </div>
+    <div class="contact-card">
+      <div class="c-avatar ca3">S</div>
+      <div class="c-info">
+        <div class="c-name">Sharma Sir (WhatsApp)</div>
+        <div class="c-number">9971 464 327</div>
+        <span class="c-badge">💬 WhatsApp</span>
+      </div>
+      <span style="font-size:18px;">📲</span>
+    </div>
+  </div>
+
+  <div class="rainbow-bar-bottom"></div>
+</div>
+</body>
+</html>
