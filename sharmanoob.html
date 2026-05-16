@@ -1,0 +1,26 @@
+<script>
+  function redirectToGoogleForm(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const name = form.name.value;
+    const email = form.email.value;
+    const phone = form.phone.value;
+    const course = form.course.value;
+    const message = form.message.value;
+
+    // Google Form Link
+    const googleFormURL =
+      "https://forms.gle/PqiyXoSWKcZanjpe8";
+
+    // Open form in new tab
+    window.open(googleFormURL, "_blank");
+
+    // Success popup
+    alert("Redirecting to Google Inquiry Form");
+
+    // Reset form
+    form.reset();
+  }
+</script>
